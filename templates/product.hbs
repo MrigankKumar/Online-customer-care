@@ -1,0 +1,97 @@
+---
+{
+    "stream": {
+        "$id": "product-detail-page",
+        "source": "knowledgeGraph",
+        "destination": "pages",
+      "filter": {
+        "entityTypes": [
+          "ce_shoes"
+        ]
+      },
+      "fields": [
+        "id",
+        "uid",
+        "meta",
+        "name",
+        "c_slug",
+        "c_price",
+        "c_type",
+        "c_purpose",
+        "c_brand",
+        "c_colour"
+        
+        
+      ],
+      "localization": {
+          "locales": ["en"]
+      }
+    },
+    "urlFormat": "{{c_slug}}"
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{{name}}</title>
+        <meta name="description" content={{richTextDescription}}>
+        {{>head}}
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="w-full">
+            <div class="centered-container">
+                {{>navbar}}
+                <div class="section grid gap-y-10 md:grid-cols-2 md:gap-x-10">
+                    <div class="">
+                        <a href={{this.image.url}}>
+                            <img class="hover:grow hover:shadow-lg" src="https://m.media-amazon.com/images/I/71ZSYJXb0GL._UY625_.jpg">
+                        </a> 
+                    </div>
+                    <div class="space-y-12">
+                        <div class="grid gap-y-3">
+                            <div class="product-title">
+                                {{name}} 
+                            </div>
+                            <div class="product-subtitle">
+                                {{c_brand}} 
+                            </div>
+                            <div class="product-price">
+                               ₹ {{c_price}} 
+                            </div>
+                            <p class="text-xl">
+
+                               {{c_type}} <!-- {{convertRTFToHTML richTextDescription}} -->
+                            </p>
+                            <p class="text-xl">
+                                <b>Color:</b> {{c_color}}
+                            </p>
+                            <p class="text-xl">
+                                <b>Purpose:</b> {{c_purpose}}
+                            </p>
+                        </div>
+                        <div class="buttons flex flex-col space-y-5 justify-center w-full px-12" data-ya-scope="productCTAs">
+                            <button class="product-mainCTA" data-ya-track="addToBag">
+                            Add to Bag
+                            </button>
+                            <button class="product-secondaryCTA" data-ya-track="favorite">
+                            Favorite
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="w-full bg-gray-50">
+            <div class="centered-container">
+                {{>footer}}
+            </div>
+        </div>
+    </body> 
+
+</html>
