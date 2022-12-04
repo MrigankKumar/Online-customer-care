@@ -1,2 +1,34 @@
 <script src="/index.js"></script>
 {{>analytics uid=uid}}
+ <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://assets.sitescdn.net/answers-search-bar/v1.0/answers.css"
+  />
+  <script src="https://assets.sitescdn.net/answers-search-bar/v1.0/answerstemplates.compiled.min.js"></script>
+  <script>
+    function initAnswers() {
+      ANSWERS.init({
+        apiKey: "sandbox-6ebdc2a093e082906d56ec7e0d0a66d7",
+        experienceKey: "online-customer",
+        experienceVersion: "PRODUCTION",
+        locale: "en", // e.g. en
+        businessId: "3188857",
+        templateBundle: TemplateBundle.default,
+        onReady: function() {
+          ANSWERS.addComponent("SearchBar", {
+            container: ".search_form",
+            name: "search-bar", //Must be unique for every search bar on the same page
+            redirectUrl: "https://awesomely-favourite-gibbon.sbx.pgsdemo.com/",
+            placeholderText: "Search...",
+          });
+        },
+      });
+    }
+  </script>
+  <script
+    src="https://assets.sitescdn.net/answers-search-bar/v1.0/answers.min.js"
+    onload="ANSWERS.domReady(initAnswers)"
+    async
+    defer
+  ></script>

@@ -34,6 +34,36 @@
             </div>
           </div>
       </div>
+      <!-- Code starts of overlay answer search -->
+        <script type="text/javascript" async src="https://awesomely-favourite-gibbon.sbx.pgsdemo.com/overlay.js"></script>
+  <script>
+    window.YxtAnswersOverlaySettings = {
+      domain: "https://awesomely-favourite-gibbon.sbx.pgsdemo.com/",
+      button: {
+        alignment: 'right',
+        color: { //update with your desired colors
+          background: '#808080',
+          text: '#FFFFFF'
+        },
+      },
+      panel: {
+        header: "We're here to help.", //update with your desired header
+        subtitle: "Find frequently asked questions and resources.", //update with your desired subtitle
+        color: { //update with your desired colors
+          background: '#808080', 
+          text: '#FFFFFF'
+        },
+      },
+      prompts: [ //update with your desired prompts
+        { text: "Locations near me" },
+        { text: "Do you have gift cards?" },
+        { text: "Operations & COVID-19" },
+        { text: "How do I log in?" }
+      ]
+    };
+  </script>
+
+      <!-- Code ends of overlay answer search -->
       <div class="w-full bg-gray-50">
           <div class="centered-container">
               {{>footer}}
